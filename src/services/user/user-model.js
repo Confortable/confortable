@@ -9,13 +9,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  username: { type: String, required: true, unique: true },
   facebookId: { type: String },
   facebook: { type: Schema.Types.Mixed },
   googleId: { type: String },
   google: { type: Schema.Types.Mixed },
   email: {type: String, required: true, unique: true},
   password: { type: String, required: true },
-  
+  roles: [{ type: String, required:true }],
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });

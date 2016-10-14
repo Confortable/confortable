@@ -1,13 +1,15 @@
 {
   "host": "localhost",
   "port": 8080,
-  "mongodb": "mongodb://localhost:27017/confortable",
+  "mongodb": "mongodb://localhost:27017/test",
   "public": "../public/",
   "auth": {
     "token": {
-      "secret": "Wtp8w5xWbZLiWZ0/jZ50HkYI+Z+6GJbG+wKlpNpHOnD0ZEcYIeQZpKaW+aldGyQSQ/xOydj5OjgXehbwWNaRYw=="
+      "secret": "tA5UBhxj81wYECc0Jg48PaYI5wUIZXJHBWVFI//B+jfnj3LIKQzn5tYBpHcH/ne13pHXW4QlLMU6e90HohkyhA=="
     },
-    "local": {},
+    "local": {
+      "usernameField": "username"
+    },
     "facebook": {
       "clientID": "your facebook client id",
       "clientSecret": "your facebook client secret",
