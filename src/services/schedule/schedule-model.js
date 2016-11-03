@@ -1,7 +1,7 @@
 'use strict';
 
 // schedule-model.js - A mongoose model
-// 
+//
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 
@@ -10,6 +10,7 @@ const Schema = mongoose.Schema;
 
 const scheduleSchema = new Schema({
   name: { type: String, required: true, unique: true },
+  userId: { type: Schema.Types.ObjectId, required: true },
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });
