@@ -91,4 +91,29 @@ describe('schedule service', () => {
         done();
       });
   });
+
+  it('should update the schedule data', function(done) {
+    chai.request(app)
+      //request to /store
+      .get('/schedules')
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '.concat(token))
+      //when finished do the following
+      .end((err, res) => {
+        // test for put for a schedule /schedules/schedule_id
+        chai.request(app)
+          .put('/schedules/' + res.body.data[0]._id)
+          .set('Accept', 'application/json')
+          .set('Authorization', 'Bearer '.concat(token))
+          .send({
+            name: 'JS Unconf'
+          })
+          .end(function(err, res) {
+            res.body.should.have.property('name');
+            res.body.name.should.equal('JS Unconf');
+            done();
+          });
+
+      });
+  });
 });
